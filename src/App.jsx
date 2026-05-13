@@ -1,6 +1,13 @@
+import React from 'react'
+import './layout.scss'
+import Navbar from './components/navbar/Navbar.jsx'
+
 function App() {
   return (
-    <div>Hello World</div>
+    <div className="layout">
+      <Navbar/>
+    </div>
+
   )
 }
 
