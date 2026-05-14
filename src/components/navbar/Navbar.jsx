@@ -6,6 +6,7 @@ import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
+    let user = false
 
     return (
         <nav>
@@ -24,8 +25,27 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="btnsSide">
-                <button className="login">Login</button>
-                <button className="signup">Sign Up</button>
+                {user ? (
+                    <div className="user">
+                        <img
+                            src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                            alt=""
+                        />
+                        <span>John Doe</span>
+                        <Link to="/profile" className="profile">
+                            <div className="notification">3</div>
+                            <span>Profile</span>
+                        </Link>
+                    </div>
+                ) : (
+                    <>
+                        <button className="login">Login</button>
+                        <button className="signup">Sign Up</button>
+
+
+                    </>
+                )}
+
             </div>
             <div className={open ? "menuIcon active" : "menuIcon"} onClick={() => setOpen(!open)}>
                 <FontAwesomeIcon icon={open ? faXmark : faBars} />

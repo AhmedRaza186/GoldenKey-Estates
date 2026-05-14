@@ -1,4 +1,4 @@
-@import "./responsive.scss";
+@import "../../responsive.scss";
 
 .layout {
     background: #FFFFFF;
@@ -7,7 +7,7 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow-x: hidden;
     position: relative;
 
     @include sm {
@@ -22,8 +22,3 @@
 }
 
 
-.pages{
-  width: 100%;
-  flex: 1;
-
-}
