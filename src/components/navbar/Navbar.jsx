@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Navbar.scss'
-import logo from '../../assets/logo.png'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
+    const [open, setOpen] = useState(false);
+
     return (
         <nav>
             <div className="linksSide">
                 <div className="logo">
                     <a href="" className='logoLink'>
-                        <img src={logo} alt="logo" />
+                        <img src="/logo.png" alt="logo" />
                         <span>GoldenKey</span>
                     </a>
                 </div>
@@ -25,11 +27,11 @@ const Navbar = () => {
                 <button className="login">Login</button>
                 <button className="signup">Sign Up</button>
             </div>
-              <div className="menuIcon">
-                
-              </div>
-            <div className="mobileMenu">
-                <div className="links">
+            <div className={open ? "menuIcon active" : "menuIcon"} onClick={() => setOpen(!open)}>
+                <FontAwesomeIcon icon={open ? faXmark : faBars} />
+            </div>
+            <div className={open ? "mobileMenu active" : "mobileMenu"}>
+                <div className="links" onClick={() => setOpen(false)}>
                     <a href='#'>Home</a>
                     <a href='#'>About</a>
                     <a href='#'>Contact</a>

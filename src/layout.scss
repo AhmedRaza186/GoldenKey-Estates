@@ -1,22 +1,29 @@
 @import "./responsive.scss";
 
-.layout{
+.layout {
     background: #FFFFFF;
-    // background: #000;
     height: 100vh;
-    max-width: 75%;
+    max-width: 1366px;
     margin: 0 auto;
-    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
 
-    @include sm{
-        max-width: 85%;
-    
-    }  
-      @include md {
-        max-width: 75%;
-      }
-    
-      @include lg {
-       
-      }
+    @include sm {
+        max-width: 80%;
+        padding: 0 10px;
+    }
+
+    @include md {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+}
+
+
+.pages{
+  width: 100%;
+  flex: 1;
+
 }

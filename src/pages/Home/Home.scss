@@ -1,0 +1,90 @@
+@import '../../responsive.scss';
+
+.homePage {
+    display: flex;
+    height: 100%;
+
+    .textContainer {
+        flex: 3;
+        
+        .wrapper {
+            padding-right: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 50px;
+            height: 100%;
+
+            @include lg {
+                padding-right: 0px;
+            }
+
+            @include md {
+                gap: 20px;
+                justify-content: flex-start;
+                padding-top: 50px;
+            }
+
+            .title {
+                font-size: 64px;
+
+                @include lg {
+                    font-size: 48px;
+                }
+
+                @include md {
+                    font-size: 32px;
+                }
+            }
+
+            p {
+                @include md {
+                    display: none;
+                }
+            }
+
+            .boxes {
+                display: flex;
+                justify-content: space-between;
+
+                @include md {
+                    display: none;
+                }
+
+                @include sm {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                }
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 20px;
+                font-weight: 300;
+            }
+        }
+    }
+
+    .imgContainer {
+        flex: 2;
+        background: #fcf5f3;
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 46%;
+
+        @include md {
+            display: none;
+        }
+
+        img {
+            width: 115%;
+            position: absolute;
+            right: 0;
+        }
+    }
+}
