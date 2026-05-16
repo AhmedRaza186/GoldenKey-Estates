@@ -8,6 +8,8 @@ import SinglePage from "./pages/singlePage/singlePage.jsx";
 import ProfilePage from "./pages/profilePage/profilePage.jsx";
 import Login from "./pages/login/login.jsx";
 import Register from "./pages/register/register.jsx";
+import ProfileUpdatePage from "./pages/updateProfilePage/UpdateProfile.jsx";
+import NewPostPage from "./pages/newPostPage/NewPsotPage.jsx";
 
 
 function App() {
@@ -38,6 +40,14 @@ function App() {
         {
           path:"/register",
           element:<Register/>
+        },
+        {
+          path:"/profile/update",
+          element:<ProfileUpdatePage/>
+        },
+        {
+          path:"/add",
+          element:<NewPostPage/>
         }
       ]
     }

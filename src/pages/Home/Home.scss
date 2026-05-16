@@ -75,14 +75,14 @@
         position: relative;
         display: flex;
         align-items: center;
-        width: 46%;
+        overflow: hidden;
 
         @include md {
             display: none;
         }
 
         img {
-            width: 115%;
+            width: 100%;
             position: absolute;
             right: 0;
         }

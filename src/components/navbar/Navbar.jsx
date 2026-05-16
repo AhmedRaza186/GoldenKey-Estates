@@ -3,19 +3,20 @@ import './Navbar.scss'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
-    let user = false
+    let user = true
 
     return (
         <nav>
             <div className="linksSide">
                 <div className="logo">
-                    <a href="" className='logoLink'>
+                    <Link to="/" className='logoLink'>
                         <img src="/logo.png" alt="logo" />
                         <span>GoldenKey</span>
-                    </a>
+                    </Link>
                 </div>
                 <div className="links">
                     <a href='#'>Home</a>
@@ -39,10 +40,8 @@ const Navbar = () => {
                     </div>
                 ) : (
                     <>
-                        <button className="login">Login</button>
-                        <button className="signup">Sign Up</button>
-
-
+                        <Link to="/login" className="login">Login</Link>
+                        <Link to="/register" className="signup">Sign Up</Link>
                     </>
                 )}
 
@@ -52,12 +51,12 @@ const Navbar = () => {
             </div>
             <div className={open ? "mobileMenu active" : "mobileMenu"}>
                 <div className="links" onClick={() => setOpen(false)}>
-                    <a href='#'>Home</a>
-                    <a href='#'>About</a>
-                    <a href='#'>Contact</a>
-                    <a href='#'>Agents</a>
-                    <a className="login">Login</a>
-                    <a className="signup">Sign Up</a>
+                    <Link to='/'>Home</Link>
+                    <Link to='/'>About</Link>
+                    <Link to='/'>Contact</Link>
+                    <Link to='/'>Agents</Link>
+                    <Link to="/login" className="login">Login</Link>
+                    <Link to="/register" className="signup">Sign Up</Link>
                 </div>
             </div>
         </nav>

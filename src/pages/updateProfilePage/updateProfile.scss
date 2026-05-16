@@ -1,0 +1,124 @@
+.profileUpdatePage {
+  height: 100vh;
+  display: flex;
+  background-color: #f7f9fb;
+
+  .formContainer {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+    form {
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      h1 {
+        font-weight: 300;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        label {
+          font-size: 14px;
+          color: #666;
+          font-weight: 600;
+        }
+
+        input {
+          padding: 15px;
+          border-radius: 8px;
+          border: 1px solid #ddd;
+          outline-color: teal;
+          transition: all 0.3s ease;
+
+          &:focus {
+            border-color: teal;
+            box-shadow: 0 0 5px rgba(0, 128, 128, 0.1);
+          }
+        }
+      }
+
+      .updateBtn {
+        padding: 15px;
+        border-radius: 8px;
+        border: none;
+        background-color: teal;
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #006666;
+        }
+
+        &:disabled {
+          background-color: #ccc;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+
+  .sideContainer {
+    flex: 2;
+    background-color: #fcf5f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .avatarWrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      width: 100%;
+
+      .avatar {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid white;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      }
+
+      .uploadLabel {
+        font-size: 14px;
+        color: #555;
+        text-decoration: underline;
+        cursor: pointer;
+        font-weight: 500;
+
+        &:hover {
+          color: teal;
+        }
+      }
+    }
+  }
+
+  // Responsive Breakpoint
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    
+    .sideContainer {
+      flex: 1;
+      padding: 40px 0;
+    }
+    
+    .formContainer {
+      flex: 2;
+    }
+  }
+}
