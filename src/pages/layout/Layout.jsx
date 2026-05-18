@@ -1,10 +1,14 @@
 import "./layout.scss";
 import Navbar from "../../components/navbar/Navbar"
-import { Outlet } from "react-router-dom";
+import { Outlet, Navigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import { Toaster } from "react-hot-toast";
 
 function Layout() {
   return (
     <div className="layout">
+      <Toaster position="top-right" reverseOrder={false} />
       <div className="navbar">
         <Navbar />
       </div>
@@ -15,4 +19,12 @@ function Layout() {
   );
 }
 
-export default Layout;
+function RequireAuth() {
+  const { currentUser } = useContext(AuthContext);
+
+  if (!currentUser) return <Navigate to="/login" />;
+
+  return <Outlet />;
+}
+
+export { Layout, RequireAuth };

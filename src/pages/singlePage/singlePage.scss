@@ -194,16 +194,40 @@
       .buttons {
         display: flex;
         justify-content: space-between;
+        gap: 15px;
 
         button {
-          padding: 20px;
+          flex: 1;
+          padding: 15px 20px;
           display: flex;
           align-items: center;
-          gap: 5px;
+          justify-content: center;
+          gap: 8px;
           background-color: white;
-          border: 1px solid #fece51;
-          border-radius: 5px;
+          border: 1.5px solid #fece51;
+          border-radius: 8px;
+          font-weight: 600;
           cursor: pointer;
+          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+          &:hover {
+            background-color: #fece51;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(254, 206, 81, 0.2);
+          }
+
+          &:active {
+            transform: translateY(0) scale(0.98);
+          }
+
+          &:disabled {
+            background-color: #e5e5e5;
+            border-color: #ccc;
+            color: #777;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+          }
 
           img {
             width: 16px;

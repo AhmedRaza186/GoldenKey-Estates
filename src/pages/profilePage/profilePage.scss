@@ -75,6 +75,21 @@
           background-color: #fece51;
           cursor: pointer;
           border: none;
+          font-weight: 600;
+          border-radius: 5px;
+          white-space: nowrap;
+          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 0 4px 6px rgba(254, 206, 81, 0.15);
+
+          &:hover {
+            background-color: darken(#fece51, 5%);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 12px rgba(254, 206, 81, 0.25);
+          }
+
+          &:active {
+            transform: translateY(0) scale(0.98);
+          }
         }
       }
 
@@ -94,6 +109,29 @@
           height: 40px;
           border-radius: 50%;
           object-fit: cover;
+        }
+
+        button {
+          padding: 10px 20px;
+          background-color: #ff4d4d;
+          color: white;
+          cursor: pointer;
+          border: none;
+          font-weight: 600;
+          border-radius: 5px;
+          width: max-content;
+          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 0 4px 6px rgba(255, 77, 77, 0.15);
+
+          &:hover {
+            background-color: darken(#ff4d4d, 5%);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 12px rgba(255, 77, 77, 0.25);
+          }
+
+          &:active {
+            transform: translateY(0) scale(0.98);
+          }
         }
       }
     }

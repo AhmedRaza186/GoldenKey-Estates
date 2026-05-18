@@ -1,13 +1,18 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './Navbar.scss'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../../context/AuthContext.jsx'
+import { NotificationContext } from '../../context/NotificationContext.jsx'
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
-    let user = true
+    const {currentUser} = useContext(AuthContext);
+    const { notificationCount } = useContext(NotificationContext);
+    
+    // let user = true
 
     return (
         <nav>
@@ -26,15 +31,12 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="btnsSide">
-                {user ? (
+                {currentUser ? (
                     <div className="user">
-                        <img
-                            src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                            alt=""
-                        />
-                        <span>John Doe</span>
+                    <img src={currentUser.avatar || "/noavatar.jpg"} alt="" />
+                        <span>{currentUser.username}</span>
                         <Link to="/profile" className="profile">
-                            <div className="notification">3</div>
+                            {notificationCount > 0 && <div className="notification">{notificationCount}</div>}
                             <span>Profile</span>
                         </Link>
                     </div>

@@ -1,5 +1,6 @@
 .register {
   height: 100%;
+  overflow-y: hidden;
   display: flex;
 
   .formContainer {
@@ -28,15 +29,37 @@
         color: white;
         font-weight: bold;
         cursor: pointer;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 6px rgba(0, 128, 128, 0.15);
+
+        &:hover {
+          background-color: #005c5c;
+          box-shadow: 0 6px 12px rgba(0, 128, 128, 0.25);
+          transform: translateY(-1px);
+        }
+
+        &:active {
+          transform: translateY(0) scale(0.98);
+        }
 
         &:disabled {
           background-color: #bed9d8;
           cursor: not-allowed;
+          box-shadow: none;
+          transform: none;
         }
       }
 
       span {
         color: rgba(255, 0, 0, 0.591);
+      }
+
+      .error {
+        color: rgba(255, 0, 0, 0.8);
+        font-size: 14px;
+        font-weight: 500;
+        margin: 0;
+        text-align: center;
       }
 
       a {
