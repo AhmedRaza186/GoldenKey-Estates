@@ -10,7 +10,7 @@ import ProfilePage from "./pages/profilePage/profilePage.jsx";
 import Login from "./pages/login/login.jsx";
 import Register from "./pages/register/register.jsx";
 import ProfileUpdatePage from "./pages/updateProfilePage/UpdateProfile.jsx";
-import NewPostPage from "./pages/newPostPage/NewPsotPage.jsx";
+import NewPostPage from "./pages/newPostPage/NewPostPage.jsx";
 import { listPageLoader, profilePageLoader, singlePageLoader } from "./lib/loaders";
 
 

@@ -10,6 +10,7 @@ import toast from "react-hot-toast";
 function NewPostPage() {
   const [value, setValue] = useState("");
   const [images, setImages] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -17,6 +18,9 @@ function NewPostPage() {
     e.preventDefault();
     const formData = new FormData(e.target);
     const inputs = Object.fromEntries(formData.entries());
+
+    setIsLoading(true);
+
 
     try {
       const res = await apiRequest.post("/posts", {
@@ -52,6 +56,10 @@ function NewPostPage() {
       const errMsg = err.response?.data?.message || "Failed to create post!";
       setError(errMsg);
       toast.error(errMsg);
+    }
+    finally{
+      setIsLoading(false)
+
     }
   };
 

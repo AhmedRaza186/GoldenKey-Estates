@@ -22,8 +22,8 @@ function Login() {
     const { email, password } = data;
 
     if (!email || !password) {
-      setError("Please fill in all fields");
-      toast.error("Please fill in all fields");
+      setError("All fields are required");
+      toast.error("All fields are required");
       setTimeout(() => setError(""), 2000);
       return;
     }
