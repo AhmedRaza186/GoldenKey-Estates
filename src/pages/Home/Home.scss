@@ -1,4 +1,4 @@
-@import '../../responsive.scss';
+@use '../../responsive.scss'as *;
 
 .homePage {
     display: flex;
@@ -87,4 +87,4 @@
             right: 0;
         }
     }
-}
+}

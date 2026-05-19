@@ -1,4 +1,4 @@
-@import '../../responsive.scss';
+@use '../../responsive.scss'as *;
 
 
 .searchBar{
@@ -90,4 +90,4 @@
       }
     }
   }
-}
+}

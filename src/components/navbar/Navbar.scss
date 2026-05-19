@@ -1,4 +1,4 @@
-@import '../../responsive.scss';
+@use '../../responsive.scss'as *;
 
 nav {
     width: 100%;
