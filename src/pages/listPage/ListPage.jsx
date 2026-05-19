@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react'
-import './listPage.scss'
+import './ListPage.scss'
 import Filter from '../../components/filter/Filter.jsx'
 import Card from '../../components/card/Card.jsx'
 import Map from '../../components/map/Map.jsx'
